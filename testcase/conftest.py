@@ -97,6 +97,10 @@ def driver1(request):
 def pytest_runtest_makereport(item, call):
     outcome = yield
     rep = outcome.get_result()
+    # 以下为实现异常截图的代码：
+    # rep.when可选参数有call、setup、teardown，
+    # call表示为用例执行环节、setup、teardown为环境初始化和清理环节
+    # 这里只针对用例执行且失败的用例进行异常截图
     if rep.when == 'call' and rep.failed:
         write_failure_info(item, rep)
         if 'driver1' in item.funcargs:
