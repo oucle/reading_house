@@ -33,6 +33,12 @@ WEB_DRIVER = {
     'chromedriver.exe': os.path.join(MODULE_DIR['driver'],'chromedriver.exe') # 谷歌浏览器驱动
 }
 
+# 项目网址
+URL = "https://www.tmall.com/"
+
+# 测试用例执行失败信息文件
+FAILURES = os.path.join(BASE_DIR,'failures.txt')
+
 if __name__ == '__main__':
     print(BASE_DIR)
     print(MODULE_DIR['page'])
