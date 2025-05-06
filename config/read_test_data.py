@@ -51,7 +51,7 @@ def read_mysql_data(localhost, use, pas, db, table):
         sql = 'SELECT * FROM {}'.format(table)
         try:
             my_cur.execute(sql)
-            logger.info("执行sql语句")
+            logger.info("执行sql语句成功！！")
         except Exception as e:
             logger.error(f"执行sql语句发生错误，详情：{e}")
         else:
@@ -60,4 +60,5 @@ def read_mysql_data(localhost, use, pas, db, table):
 
 if __name__ == '__main__':
     local = '127.0.0.1'
-    read_mysql_data(local,'root','admin','test_db', 'students')
+    result1 = read_mysql_data(local,'root','admin','test_db', 'students')
+    print(result1)
